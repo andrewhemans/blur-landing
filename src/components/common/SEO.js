@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'A landing page for Blur Social',
+  description: 'a community for creators to sell their work and build a fanbase',
   title: 'Blur Social',
   url: 'www.blursocial.com',
   author: 'Andrew Hemans',

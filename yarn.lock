@@ -958,6 +958,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.10.3":
+  version "7.11.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
+  integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.10.2":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.10.2.tgz#49dbbadcbc4b199df064d7d8b3e21c915b84abdb"
@@ -6403,6 +6410,13 @@ gatsby-plugin-alias-imports@^1.0.5:
   integrity sha512-q58JrSjuVNh4NApamqElR0zqwm55FOb9vFAVb2i2ftPRu0uYzWJkbOz2IN3vSw7a+5PmGzX7VL8XDFXlNHrMNA==
   dependencies:
     "@babel/runtime" "^7.2.0"
+
+gatsby-plugin-fullstory@^2.3.11:
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-fullstory/-/gatsby-plugin-fullstory-2.3.11.tgz#5d26effcf9b0dbf78ed5f49b77e0f0a30eeffb56"
+  integrity sha512-0/0IPWKOkaNnB9xeN1JftcDH9aUSmJScyUH6E/1Vf1xrhpWqJkpuJ6GkscqjRkVgX5OoAo+6V85F2c1898b3YQ==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
 
 gatsby-plugin-google-fonts@^1.0.1:
   version "1.0.1"

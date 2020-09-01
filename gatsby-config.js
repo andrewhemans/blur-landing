@@ -43,6 +43,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-fullstory`,
+      options: {
+        fs_org: XSSKV,
+      },
+    },
+
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`inter\:400,500,700,800`],
