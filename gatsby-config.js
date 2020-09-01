@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-fullstory`,
       options: {
-        fs_org: XSSKV,
+        fs_org: 'XSSKV',
       },
     },
 
