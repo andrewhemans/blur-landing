@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-absurd",
+  "name": "blur-social",
   "private": true,
-  "description": "An absurd starter for Gatsby",
+  "description": "A landing page for Blur Social",
   "version": "0.1.0",
-  "author": "Ajay NS <ajay.ns@outlook.com>",
+  "author": "Andrew <andrewhemans@gmail.com>",
   "dependencies": {
     "@svgr/webpack": "^4.1.0",
     "gatsby": "^2.0.76",
