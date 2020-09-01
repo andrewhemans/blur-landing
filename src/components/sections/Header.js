@@ -1,76 +1,74 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import mockup from '@images/art/mockup.png'
+import pattern from '@images/art/pattern.png'
+import logo from '@images/art/logo.svg'
+import button from '@images/art/button.svg'
 
 import { Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
+
+
 const Header = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_build: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "build" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
+
       <HeaderWrapper>
         <Container>
           <Grid>
-            <Art>
-              <Img fluid={data.art_build.childImageSharp.fluid} />
-            </Art>
-            <Text>
-              <h1>
-                Fast in
-                <br />
-                every way
-                <br />
-                that matters
-              </h1>
+            <ImageDiv>
+            <Image src={mockup} />
+            </ImageDiv>
+          
+            <TextDiv>
+             <Logo src={logo}></Logo>
+             <br />
+              a community for creators to sell their work and build a fanbase
               <br />
-              <p>
-                <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
-                  Check out source &nbsp;&#x2794;
+              <StyledExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSd0cieqa8Dih3GQfRmby1h56VNrXfOJUy6WbLzzPqGvnu1yOw/viewform?usp=sf_link">
+                  <img src={button} alt="Survey Button"/>
                 </StyledExternalLink>
-              </p>
-            </Text>
+            </TextDiv>
           </Grid>
         </Container>
       </HeaderWrapper>
-    )}
-  />
 );
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.theme.color.primary};
-  padding-top: 96px;
+  background-image: url(${pattern});
+  background-size: cover;
+  padding: 96px 0;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
   }
 `;
 
-const Art = styled.figure`
-  width: 100%;
-  margin: 0;
 
-  > div {
-    width: 120%;
-    margin-bottom: -4.5%;
+const Image = styled.img`
+  height: 80vh;
+`;
 
-    @media (max-width: ${props => props.theme.screen.md}) {
-      width: 100%;
-    }
+const Logo = styled.img`
+  
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width: 80%;
+  }
+  
+`;
+
+const ImageDiv = styled.div`
+  display: flex;
+  flex-direction: vertical;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TextDiv = styled.div`
+  font-weight: 800;
+  font-size: 48px;
+  color: #566473;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    font-size: 42px;
   }
 `;
 
@@ -84,27 +82,16 @@ const Grid = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 80px;
 
-    > ${Art} {
+    > ${ImageDiv} {
       order: 2;
     }
   }
 `;
 
-const Text = styled.div`
-  justify-self: center;
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: start;
-  }
-`;
-
 const StyledExternalLink = styled(ExternalLink)`
-  color: inherit;
-  text-decoration: none;
 
-  &:hover {
-    color: ${props => props.theme.color.black.regular};
-  }
+  line-height: 2.5;
+
 `;
 
 export default Header;

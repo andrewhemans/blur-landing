@@ -22,10 +22,14 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     ${props => props.theme.font_size.xlarge};
+    font-weight: 700;
+    color: #566473;
   }
 
   h2 {
     ${props => props.theme.font_size.larger};
+    font-weight: 700;
+    color: #566473;
   }
 
   h3 {

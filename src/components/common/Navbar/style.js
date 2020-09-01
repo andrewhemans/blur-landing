@@ -4,11 +4,12 @@ import { Container } from '@components/global';
 
 export const Nav = styled.nav`
   padding: 16px 0;
-  background-color: ${props => props.theme.color.primary};
+  background-color: #FAFBFB;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  border-bottom: 3px solid #EDEEF0;
 `;
 
 export const StyledContainer = styled(Container)`
@@ -24,6 +25,7 @@ export const NavListWrapper = styled.div`
     padding: 0;
     display: flex;
     flex-direction: row;
+    font-weight: 500;
 
     ${({ mobile }) =>
       mobile &&
@@ -59,7 +61,7 @@ export const NavItem = styled.li`
 
 export const MobileMenu = styled.div`
   width: 100%;
-  background: ${props => props.theme.color.primary};
+  background: ${props => props.theme.color.white.dark};
 `;
 
 export const Brand = styled.div`
@@ -83,4 +85,9 @@ export const Mobile = styled.div`
       display: none;
     }
   `}
+`;
+
+export const ImageIcon = styled.img`
+
+  
 `;

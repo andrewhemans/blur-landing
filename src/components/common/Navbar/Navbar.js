@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
+import icon from '@images/art/icon.svg'
 
 import { Container } from '@components/global';
 import {
@@ -11,11 +12,12 @@ import {
   NavListWrapper,
   MobileMenu,
   Mobile,
+  ImageIcon
 } from './style';
 
 import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
 
-const NAV_ITEMS = ['About', 'Brands', 'Team', 'FAQ'];
+const NAV_ITEMS = ['About', 'Team'];
 
 class Navbar extends Component {
   state = {
@@ -59,7 +61,9 @@ class Navbar extends Component {
     return (
       <Nav {...this.props}>
         <StyledContainer>
-          <Brand>Absurd</Brand>
+          <Brand>
+          <ImageIcon src={icon} />
+          </Brand>
           <Mobile>
             <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
               <MenuIcon />

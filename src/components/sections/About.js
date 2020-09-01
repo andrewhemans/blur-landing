@@ -9,9 +9,9 @@ const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
+        activity: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
+          name: { eq: "activity" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -20,9 +20,9 @@ const About = () => (
           }
         }
 
-        art_learn: file(
+        subscribe: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
+          name: { eq: "subscribe" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -31,9 +31,9 @@ const About = () => (
           }
         }
 
-        art_ideas: file(
+        feed: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
+          name: { eq: "feed" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -48,44 +48,35 @@ const About = () => (
         <Container>
           <Grid>
             <div>
-              <h2>Speed past the competition</h2>
+              <h2>Build your network</h2>
               <p>
-                Gatsby.js builds the fastest possible website. Instead of
-                waiting to generate pages when requested, pre-build pages and
-                lift them into a global cloud of servers — ready to be delivered
-                instantly to your users wherever they are.
+                Work with other creators and your fans to build your network. All public posts can be shared on a curated fan page, or on another creators page.
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
+              <Img fluid={data.activity.childImageSharp.fluid} />
             </Art>
           </Grid>
           <Grid inverse>
             <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
+              <Img fluid={data.subscribe.childImageSharp.fluid} />
             </Art>
             <div>
-              <h2>Nothing new to learn here</h2>
+              <h2>Create custom subscriptions</h2>
               <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
+                Fans can subscribe to custom feeds of your work that you can curate based on tiered pricing. You set the pricing, post your content, and earn from your work.
               </p>
             </div>
           </Grid>
           <Grid>
             <div>
-              <h2>Grow and build your ideas</h2>
+              <h2>Boost your favorite creators</h2>
               <p>
-                Waste no more time on tooling and performance. Focus on the the
-                site you want to build and nothing more.
-                <br />
-                <br />
-                Gatsby is fast in every way that matters.
+               As a fan you can center your blog around promoting your favorite creators. Your blog is your curated gallery for all of the content you love and want to share.
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
+              <Img fluid={data.feed.childImageSharp.fluid} />
             </Art>
           </Grid>
         </Container>
@@ -135,7 +126,7 @@ const Grid = styled.div`
 
 const Art = styled.figure`
   margin: 0;
-  max-width: 380px;
+  max-width: 300px;
   width: 100%;
 `;
 

@@ -7,34 +7,14 @@ import { Section, Container } from '@components/global';
 
 const TEAM = [
   {
-    name: 'Josh Peck',
-    image: 'josh.jpg',
-    role: 'Founder',
+    name: 'Andrew Hemans',
+    image: 'andrew.png',
+    role: 'Co-Founder',
   },
   {
-    name: 'Lisa Haydon',
-    image: 'lisa.jpg',
-    role: 'Art Director',
-  },
-  {
-    name: 'Ashlyn Harris',
-    image: 'ashlyn.jpg',
-    role: 'Frontend Engineer',
-  },
-  {
-    name: 'Todd Joseph',
-    image: 'todd.jpg',
-    role: 'Designer',
-  },
-  {
-    name: 'Martin White',
-    image: 'martin.jpg',
-    role: 'Backend Engineer',
-  },
-  {
-    name: 'Rose Leslie',
-    image: 'rose.jpg',
-    role: 'Marketing',
+    name: 'Prasanna Jeyasankar',
+    image: 'prasanna.png',
+    role: 'Co-Founder',
   },
 ];
 
@@ -51,16 +31,6 @@ const Team = () => (
                   ...GatsbyImageSharpFluid
                 }
               }
-            }
-          }
-        }
-        art_team: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "team_work" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1600) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
@@ -85,12 +55,6 @@ const Team = () => (
               );
             })}
           </TeamGrid>
-          <Art>
-            <Img fluid={data.art_team.childImageSharp.fluid} />
-          </Art>
-          <ArtMobile>
-            <Img fluid={data.art_team.childImageSharp.fluid} />
-          </ArtMobile>
         </Container>
       </Section>
     )}
@@ -120,42 +84,16 @@ const TeamGrid = styled.div`
   }
 `;
 
-const Art = styled.figure`
-  width: 800px;
-  margin: -80px 0;
-  position: absolute;
-  top: 0;
-  left: 70%;
-
-  @media (max-width: ${props => props.theme.screen.lg}) {
-    top: 20%;
-  }
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    display: none;
-  }
-`;
-
-const ArtMobile = styled.figure`
-  width: 100%;
-  margin: 0;
-  display: none;
-  margin-top: 64px;
-  margin-bottom: -60%;
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    display: block;
-  }
-`;
 
 const Title = styled.p`
   margin-top: 16px;
+  ${props => props.theme.font_size.small};
   color: ${props => props.theme.color.black.regular};
 `;
 
 const Subtitle = styled.p`
-  ${props => props.theme.font_size.small};
-  color: ${props => props.theme.color.black.light};
+  ${props => props.theme.font_size.xsmall};
+  color: #566473;
 `;
 
 export default Team;
